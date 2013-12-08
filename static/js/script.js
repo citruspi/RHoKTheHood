@@ -84,7 +84,7 @@ var filterOptions = [
     "Population 30's",
     "Population 40's",
     "Population 50's",
-    "Population 60's";
+    "Population 60's",
     "Population Over 70",
     "Population Under 9",
     "Poverty Rate",
