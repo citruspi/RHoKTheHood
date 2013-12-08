@@ -18,7 +18,9 @@
         #sidr{
             z-index: 500;
         }
-
+        .modal-dialog-center {
+           margin-top: 7%;
+        }
         </style>
     
     </head>
@@ -56,6 +58,30 @@
             </ul>   
         </div>
     
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="myModalLabel"><center>RHok The Hood</center></h3>
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead">
+                            Hey, thanks for checking out RHok The Hood, a project by <a>@citruspi</a> and <a>@Nolski</a>.</p>
+                        <p class="lead">
+                            We wrote RHok The Hood in an attempt to provide the residents of Monroe Country, New York with an easy way to visualize information that we found was frequently requested through the Freedom of Information Law in a concise manner using the power of Geographic Information Systems. However, we would like to get data for as many locations as possible and map as much of it as we can. The project started at a Random Hacks of Kindness hackathon at the Rochester Institute of Technology.
+                        </p>
+                        <p class="lead">
+                            RHock The Hood is powered by technology such as <a href="">leaflet.js</a> and <a href="">flask</a>. Please feel free to contact us if you have comments, questions, concerns, or data to donate.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <center><button type="button" class="btn btn-primary" data-dismiss="modal">Close</button></center>
+                    </div>    
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
         <div id="map-canvas" class="md-col-10"></div>
 	    <div id="side-bar" class="md-col-2"></div>
     </body>
@@ -72,8 +98,9 @@
 
     
     <script>
-$(document).ready(function() {
-$('#toggleMenu').sidr();
-});
+        $(document).ready(function() {
+            $('#myModal').modal('show');
+            $('#toggleMenu').sidr();
+        });
 </script>
 </html>
