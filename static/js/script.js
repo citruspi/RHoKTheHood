@@ -103,8 +103,13 @@ for (var filter in filters){
 
     console.log(filter);
 
-    $('#filterList').append('<li>' + filters[filter] + '</li>');
+    console.log($('#filterList').append('<li onclick=changeType()>' + filters[filter] + '</li>'));
 
+}
+
+function changeType(event) {
+    console.log(event);
+    //populateScale(event.target.)
 }
 
 function populateScale (label) {
