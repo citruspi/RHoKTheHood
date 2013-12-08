@@ -42,7 +42,7 @@ $(document).ready(function () {
     });
 });
 
-var filterOptions = [
+var filters = [
 
     "% Bachelors or More",
     "% Commercial Land Use",
@@ -98,6 +98,14 @@ var filterOptions = [
     "Violent Crime Rate",
     "White Population"
 ];
+
+for (var filter in filters){
+
+    console.log(filter);
+
+    $('#filterList').append('<li>' + filters[filter] + '</li>');
+
+}
 
 function populateScale (label) {
     stats[label] = stats[label].map(Number);
