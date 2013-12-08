@@ -109,6 +109,7 @@ for (var filter in filters){
 
 function changeType(event) {
     populateScale(event.target.innerHTML);
+    $('#filter').text(event.target.innerHTML);
 }
 
 function populateScale (label) {
