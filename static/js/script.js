@@ -15,9 +15,21 @@ $(document).ready(function () {
          ]
     });
 
-    var shpfile = new L.Shapefile('static/data/tl_2013_36_bg.zip',{onEachFeature:function(feature, layer) {
-        console.log(layer);
-    }});
-    shpfile.addTo(map);
-    
+   $.getJSON('/static/data/US/NY/055/US-NY-055.json', function (data) {
+
+        L.geoJson(data, { 
+            style: function (feature) {
+                       return {
+                           fillColor: "blue",
+                           fillOpacity: 0.4
+                        }
+            },
+            onEachFeature: function (feature, layer) {
+
+                    console.log(layer);
+
+            }
+        }).addTo(map);
+
+    });
 })
