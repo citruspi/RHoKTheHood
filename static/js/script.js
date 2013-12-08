@@ -25,7 +25,8 @@ $(document).ready(function () {
                     var id = feature.properties['GEOID'];
                            return {
                                fillColor: "blue",
-                               fillOpacity: 0
+                               fillOpacity: 0,
+                               opacity: 0
                             }
                 },
                 onEachFeature: function (feature, layer) {
