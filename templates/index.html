@@ -5,16 +5,47 @@
 
 	    <meta charset="UTF-8">
 	    <title>RHok The Hood | Making your city that much better.</title>
-        <link rel="stylesheet" href="/static/css/bootstrap.min.cs" />
+        
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
+        <link rel="stylesheet" href="/static/css/jquery.sidr.dark.css" />
 
         <meta name="signet:authors" content="Mihir Singh (@citruspi), Michael Nolan (@Nolski)">
         <meta name="signet:links" content="http://github.com/citruspi/RHokTheHood">
+
+        <style>
+        #toggleMenu {
+            right: 50px;
+            top: 15px;
+            z-index: 1000;
+            position: fixed;
+        }
+        #sidr{
+            z-index: 500;
+        }
+
+        </style>
     
     </head>
 
     <body>
+
+        <button type="button" id="toggleMenu" class="btn btn-primary btn-default">Menu</button>        
+
+        <div id="sidr">
+            <ul>     
+                <li><a href="#">Commercial Land Use</a></li>
+                <li><a href="#">Child Poverty Rate</a></li>
+                <li><a href="#">Animal Calls Rate</a></li>
+                <li><a href="#">School Kids</a></li>
+                <li><a href="#">Unemployment</a></li>
+                <li><a href="#">Property Crime Rate</a></li>
+                <li><a href="#">Violent Crime Rate</a></li>
+                <li><a href="#">Population Over 70</a></li>
+                <li><a href="#">Estimated Tax Bill</a></li>
+            </ul>   
+        </div>
     
         <div id="map-canvas" class="md-col-10"></div>
 	    <div id="side-bar" class="md-col-2"></div>
@@ -27,5 +58,12 @@
     <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/script.js"></script>
     <script type="text/javascript" src="static/js/signet.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.sidr.js"></script>
 
+    
+    <script>
+$(document).ready(function() {
+$('#toggleMenu').sidr();
+});
+</script>
 </html>
