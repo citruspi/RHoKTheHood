@@ -15,21 +15,21 @@ $(document).ready(function () {
          ]
     });
 
-   $.getJSON('/static/data/US/NY/055/US-NY-055.json', function (data) {
+   $.getJSON('/static/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
+        $.getJSON('/static/data/US/NY/055/US-NY-055-STATS.json', function (stats) {
+            L.geoJson(features, { 
+                style: function (feature) {
+                    var id = feature.properties['GEOID'];
+                           return {
+                               fillColor: "blue",
+                               fillOpacity: 0.4
+                            }
+                },
+                onEachFeature: function (feature, layer) {
 
-        L.geoJson(data, { 
-            style: function (feature) {
-                       return {
-                           fillColor: "blue",
-                           fillOpacity: 0.4
-                        }
-            },
-            onEachFeature: function (feature, layer) {
+                }
+            }).addTo(map);
 
-                    console.log(layer);
-
-            }
-        }).addTo(map);
-
+        });
     });
 })
