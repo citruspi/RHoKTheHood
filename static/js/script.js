@@ -15,8 +15,9 @@ $(document).ready(function () {
          ]
     });
 
-    var shpfile = new L.Shapefile('static/data/roc-shapes.zip',{onEachFeature:function(feature, layer) {
+    var shpfile = new L.Shapefile('static/data/tl_2013_36_bg.zip',{onEachFeature:function(feature, layer) {
         console.log(layer);
-    }}).addTo(map)
+    }});
+    shpfile.addTo(map);
     
 })
