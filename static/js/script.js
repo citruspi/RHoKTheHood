@@ -1,4 +1,4 @@
-function init () {
+$(document).ready(function () {
     var main = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors',
             minZoom: 5,
@@ -18,6 +18,5 @@ function init () {
     var shpfile = new L.Shapefile('static/data/roc-shapes.zip',{onEachFeature:function(feature, layer) {
         console.log(layer);
     }}).addTo(map)
-}
-
-window.onload = init;
+    
+})
