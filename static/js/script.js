@@ -1,4 +1,5 @@
-var blocks = [];
+var blocks = [],
+    menu = false;
 
 $(document).ready(function () {
     var main = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -100,6 +101,7 @@ var filterOptions = [
 
 function populateScale (label) {
     stats[label] = stats[label].map(Number);
+    console.log(stats);
     var min = d3.min(stats[label]),
         max = d3.max(stats[label]),
         scale = d3.scale.linear();
@@ -113,4 +115,17 @@ function populateScale (label) {
         block.setStyle({fillOpacity: o});
     });
     console.log(stats[label]);
+}
+
+function animateMap (event) {
+    var map_canvas = document.getElementById('map-canvas'),
+        header = document.getElementById('header');
+    if (menu == true) {
+        console.log(menu);
+        map_canvas.style.width = '100%';
+    } else {
+        console.log('scaling down');
+        map_canvas.style.width = '81%';
+    }
+    menu = !menu;
 }
