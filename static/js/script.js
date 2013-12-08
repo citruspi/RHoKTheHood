@@ -15,7 +15,9 @@ function init () {
          ]
     });
 
-    var shpfile = new L.Shapefile('static/data/roc-shapes.zip',{onEachFeature:function(feature, layer) {}}).addTo(map)
+    var shpfile = new L.Shapefile('static/data/roc-shapes.zip',{onEachFeature:function(feature, layer) {
+        console.log(layer);
+    }}).addTo(map)
 }
 
 window.onload = init;
