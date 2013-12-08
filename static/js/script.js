@@ -1,9 +1,9 @@
 function init () {
     var main = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data © OpenStreetMap contributors',
-                minZoom: 5,
-                maxZoom: 18,
-            });
+            attribution: 'Map data © OpenStreetMap contributors',
+            minZoom: 5,
+            maxZoom: 18,
+        });
         counties = L.layerGroup(),
         current_towns = L.layerGroup();
 
