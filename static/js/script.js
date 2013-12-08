@@ -101,20 +101,19 @@ var filters = [
 
 for (var filter in filters){
 
-    console.log(filter);
+    //console.log(filter);
 
-    console.log($('#filterList').append('<li onclick=changeType()>' + filters[filter] + '</li>'));
+    $('#filterList').append('<li>' + filters[filter] + '</li>').click(changeType);
 
 }
 
 function changeType(event) {
-    console.log(event);
-    //populateScale(event.target.)
+    populateScale(event.target.innerHTML);
 }
 
 function populateScale (label) {
     stats[label] = stats[label].map(Number);
-    console.log(stats);
+    //console.log(stats);
     var min = d3.min(stats[label]),
         max = d3.max(stats[label]),
         scale = d3.scale.linear();
@@ -127,7 +126,7 @@ function populateScale (label) {
         //console.log(o, val, min, max);
         block.setStyle({fillOpacity: o});
     });
-    console.log(stats[label]);
+    //console.log(stats[label]);
 }
 
 function animateMap (event) {
