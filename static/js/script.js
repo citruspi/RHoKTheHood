@@ -1,48 +1,8 @@
 var blocks = [],
     menu = false;
 
-$(document).ready(function () {
-    var main = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data © OpenStreetMap contributors',
-            minZoom: 5,
-            maxZoom: 18,
-        });
-        counties = L.layerGroup(),
-        current_towns = L.layerGroup();
 
-    window.map = L.map('map-canvas', {
-        center: [43.160552395407585, -77.60656356811523],
-        zoom: 13,
-        layers: [
-            main
-         ]
-    });
-
-   $.getJSON('/static/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
-        csvToJson('/static/data/US/NY/055/US-NY-055-STATS.csv', function (stats) {
-            L.geoJson(features, { 
-                style: function (feature) {
-                    var id = feature.properties['GEOID'];
-                           return {
-                               fillColor: "blue",
-                               fillOpacity: 0,
-                               opacity: 0
-                            }
-                },
-                onEachFeature: function (feature, layer) {
-                    layer.index = stats['Block Group ID'].indexOf(feature.properties.GEOID);
-                    window.stats = stats;
-                    if(layer.index !== -1) {
-                        blocks.push(layer);
-                    }                    
-                }
-            }).addTo(map);
-            populateScale('Violent Crime Rate')
-
-        });
-    });
-});
-
+//TODO: Don't hard code this.
 var filters = [
 
     "% Bachelors or More",
@@ -100,13 +60,65 @@ var filters = [
     "White Population"
 ];
 
-for (var filter in filters){
 
-    //console.log(filter);
+$(document).ready(function () {
+    var main = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © OpenStreetMap contributors',
+            minZoom: 5,
+            maxZoom: 18,
+        });
+        counties = L.layerGroup(),
+        current_towns = L.layerGroup();
 
-    $('#filterList').append('<li>' + filters[filter] + '</li>').click(changeType);
+    // generate list of filter choices.
+    for (var filter in filters){
+        $('#filterList').append('<li>' + filters[filter] + '</li>').click(changeType);
+    }
 
-}
+    window.map = L.map('map-canvas', {
+        center: [43.160552395407585, -77.60656356811523],
+        zoom: 13,
+        layers: [
+            main
+         ]
+    });
+
+   $.getJSON('/static/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
+        csvToJson('/static/data/US/NY/055/US-NY-055-STATS.csv', function (stats) {
+            L.geoJson(features, { 
+                style: function (feature) {
+                    var id = feature.properties['GEOID'];
+                           return {
+                               fillColor: "blue",
+                               fillOpacity: 0,
+                               opacity: 0
+                            }
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.index = stats['Block Group ID'].indexOf(feature.properties.GEOID);
+                    window.stats = stats;
+                    if(layer.index !== -1) {
+                        blocks.push(layer);
+                    }
+
+                    layer.on('mouseover', function (event) {
+                        layer.setStyle({ fillColor: 'red' });
+                    });
+
+                    layer.on('mouseout', function (event) {
+                        layer.setStyle({ fillColor: 'blue' });
+                    });
+
+                    layer.on('click', function (event) {
+                        //TODO: Create a popup menu with more information
+                    });
+                }
+            }).addTo(map);
+            populateScale('Violent Crime Rate')
+
+        });
+    });
+});
 
 function changeType(event) {
     populateScale(event.target.innerHTML);
@@ -129,17 +141,4 @@ function populateScale (label) {
         block.setStyle({fillOpacity: o});
     });
     //console.log(stats[label]);
-}
-
-function animateMap (event) {
-    var map_canvas = document.getElementById('map-canvas'),
-        header = document.getElementById('header');
-    if (menu == true) {
-        console.log(menu);
-        map_canvas.style.width = '100%';
-    } else {
-        console.log('scaling down');
-        map_canvas.style.width = '81%';
-    }
-    menu = !menu;
 }
