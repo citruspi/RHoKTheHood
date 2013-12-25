@@ -4,7 +4,6 @@ var blocks = [],
 
 //TODO: Don't hard code this.
 var filters = [
-
     "% Bachelors or More",
     "% Commercial Land Use",
     "% High School or More",
@@ -59,7 +58,6 @@ var filters = [
     "Violent Crime Rate",
     "White Population"
 ];
-
 
 $(document).ready(function () {
     var main = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -127,18 +125,29 @@ function changeType(event) {
 
 function populateScale (label) {
     stats[label] = stats[label].map(Number);
-    //console.log(stats);
+
     var min = d3.min(stats[label]),
         max = d3.max(stats[label]),
         scale = d3.scale.linear();
     scale.domain([min, max])
-        .range([0, 0.9]);
+      .range([0, 0.9]);
 
     blocks.forEach(function (block) {
         var val = parseFloat(stats[label][block.index]),
             o = scale(val);
-        //console.log(o, val, min, max);
         block.setStyle({fillOpacity: o});
+        
+        var rank = getRanking(label, val);
+
+        var html = 'Block Group ID: ' + stats['Block Group ID'][block.index] + '</br>'
+            + 'Median Value: ' + stats[label][block.index] + '</br>'
+            + 'Rank: #' + rank;
+
+        block.bindPopup(html);
     });
-    //console.log(stats[label]);
+}
+
+function getRanking(label, val) {
+    var sorted = stats[label].map(Number).sort();
+    return sorted.indexOf(val) + 1;
 }

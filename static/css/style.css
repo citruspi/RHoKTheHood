@@ -5,6 +5,13 @@ html, body {
     font-family: 'Open Sans';
 }
 
+#sidr{
+    z-index: 500;
+}
+.modal-dialog-center {
+   margin-top: 7%;
+}
+
 .logo {
 	float: left;
 }
