@@ -81,7 +81,12 @@ $(document).ready(function () {
          ]
     });
 
-   $.getJSON('/static/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
+    new L.Control.GeoSearch({
+        provider: new L.GeoSearch.Provider.Esri(),
+        showMarker: true
+    }).addTo(map);
+
+    $.getJSON('/static/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
         csvToJson('/static/data/US/NY/055/US-NY-055-STATS.csv', function (stats) {
             L.geoJson(features, { 
                 style: function (feature) {
