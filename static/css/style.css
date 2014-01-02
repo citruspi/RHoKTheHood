@@ -40,6 +40,15 @@ html, body {
 	transition: width 0.6s linear;
 }
 
+#showModal {
+
+    position: fixed;
+    right: 90px;
+    bottom: 29px;
+    z-index: 1000;
+
+}
+
 #toggleMenu {
 	position: fixed;
 	right: 10px;
