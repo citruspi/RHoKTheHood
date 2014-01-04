@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     // generate list of filter choices.
     for (var filter in filters){
-        $('#filterList').append('<li>' + filters[filter] + '</li>').click(changeType);
+        $('#filterList').append('<li><a href="#">' + filters[filter] + '</a></li>').click(changeType);
     }
 
     window.map = L.map('map-canvas', {

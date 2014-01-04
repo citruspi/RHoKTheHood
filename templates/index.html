@@ -6,77 +6,99 @@
 	    <meta charset="UTF-8">
 	    <title>RHok The Hood | Making your city that much better.</title>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/static/css/foundation.css" />
+        <script src="/static/js/modernizr.js"></script>
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
         <link rel="stylesheet" href="static/css/leaflet.label.css" />
         <link rel="stylesheet" href="static/css/L.geosearch.css" />
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
         <link rel="stylesheet" href="/static/css/jquery.sidr.dark.css" />
-
         <meta name="signet:authors" content="Mihir Singh (@citruspi), Michael Nolan (@SxNolan)">
-        <meta name="signet:links" content="http://github.com/citruspi/RHokTheHood">    
+        <meta name="signet:links" content="http://github.com/citruspi/RHokTheHood"> 
+    
     </head>
 
     <body>
-    <button type="button" id="showModal" onclick="$('#myModal').modal('show');" class="btn btn-primary btn-default">About</button>
-    <button type="button" id="toggleMenu" onclick="animateMap()" class="btn btn-primary btn-default">Filter</button>
-    	<header id="header" style="background-color: #2980b9; color: #FFF;">
-            <nav class="collapse navbar-collapse bs-navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><h3 style="float: right; margin-top: 12px;"><span id="location">Monroe County, NY</span> - <span id="filter">Violent Crime Rate</span></h3></li>
-                </ul>
-            </nav>
-        </header>
 
-        <div id="sidr">
-            <ul id="filterList">     
-            </ul>   
+        <div class="off-canvas-wrap">
+
+            <div class="inner-wrap">
+
+                <nav class="top-bar" data-topbar data-options="is_hover: false"> 
+
+                    <ul class="title-area"> 
+            
+                        <li class="name"><h1><a href="#">RHoK The Hood</a></h1></li> 
+
+                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> 
+                    </ul> 
+
+                    <section class="top-bar-section"> 
+
+                        <ul class="right"> 
+            
+                            <li><a id="location">Location: Monroe County, NY</a></li> 
+                        
+                            <li><a href="#" class="left-off-canvas-toggle">Filter: Violent Crimes Rate</a></li>
+
+                            <li class="has-dropdown">
+                                <a>More</a>
+                                
+                                <ul class="dropdown">
+
+                                    <li><a href="#">About</a></li>
+                                
+                                    <li><a href="#">Get Involved</a></li>
+                                
+                                    <li><a href="#">Contact</a></li>
+
+                            
+                                </ul>
+
+                            </li>
+                            
+                        </ul>
+            
+                    </section>
+
+                </nav> 
+
+                <aside class="left-off-canvas-menu">
+
+                    <ul id="filterList" class="off-canvas-list">
+
+                        <li><label>Filters</label></li>
+
+                    </ul>
+
+                </aside>
+
+                <div id="map-canvas"></div>
+  
+                <a class="exit-off-canvas"></a>
+
+            </div>
+
         </div>
-    
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-center">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="myModalLabel"><center>RHok The Hood</center></h3>
-                    </div>
-                    <div class="modal-body">
-                        <p class="lead">
-                        Hey, thanks for checking out RHok The Hood, a project by <a href="http://github.com/citruspi">@citruspi</a> and <a href="http://github.com/Nolski">@Nolski</a>.</p>
-                        <p class="lead">
-                            We wrote RHok The Hood in an attempt to provide the residents of Monroe Country, New York with an easy way to visualize information that we found was frequently requested through the Freedom of Information Law in a concise manner using the power of Geographic Information Systems. However, we would like to get data for as many locations as possible and map as much of it as we can. The project started at a Random Hacks of Kindness hackathon at the Rochester Institute of Technology.
-                        </p>
-                        <p class="lead">
-                        RHock The Hood is powered by <a href="">leaflet.js</a>. The project itself is <a href="http://github.com/citruspi/RHokTheHood">open source</a> and licensed under the MIT license. Please feel free to contact us if you have comments, questions, concerns, or data to donate.
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <center><button type="button" class="btn btn-primary" data-dismiss="modal">Close</button></center>
-                    </div>    
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
 
-        <div id="map-canvas" class="md-col-10"></div>
-	    <div id="side-bar" class="md-col-2"></div>
     </body>
 
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/foundation.min.js"></script>
+
+    <script>
+
+        $(document).foundation();
+
+    </script>
+
     <script type="text/javascript" src="static/js/d3.min.js"></script>
-    <script type="text/javascript" src="static/js/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
     <script type="text/javascript" src="static/js/leaflet.label.js"></script>
     <script type="text/javascript" src="static/js/L.control.geosearch.js"></script>
     <script type="text/javascript" src="static/js/L.geosearch.provider.esri.js"></script>
-    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/utilities.js"></script>
     <script type="text/javascript" src="static/js/script.js"></script>
     <script type="text/javascript" src="static/js/signet.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.sidr.js"></script>
-    
-    <script>
-        $(document).ready(function() {
-            $('#myModal').modal('show');
-            $('#toggleMenu').sidr();
-        });
-    </script>
+
 </html>
