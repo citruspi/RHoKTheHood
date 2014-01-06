@@ -19,3 +19,17 @@ html, body {
 .leaflet-top {
 	top: 70px;
 }
+
+.leaflet-control-geosearch {
+
+    background: none;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+#leaflet-control-geosearch-qry {
+
+    font-size: 1.0625rem;
+
+}
