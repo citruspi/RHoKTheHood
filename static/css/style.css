@@ -31,5 +31,8 @@ html, body {
 #leaflet-control-geosearch-qry {
 
     font-size: 1.0625rem;
+    height: 2.25em;
+    width: 100%;
+    border: 1px solid black;
 
 }
