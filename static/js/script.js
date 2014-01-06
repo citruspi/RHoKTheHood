@@ -82,7 +82,7 @@ $(document).ready(function () {
 
     new L.Control.GeoSearch({
         provider: new L.GeoSearch.Provider.Esri(),
-        showMarker: true
+        showMarker: false
     }).addTo(map);
 
     $.getJSON('/static/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
