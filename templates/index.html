@@ -46,11 +46,11 @@
                                 
                                 <ul class="dropdown">
 
-                                    <li><a href="#">About</a></li>
+                                    <li><a href="#" data-reveal-id="myModal">About</a></li>
                                 
-                                    <li><a href="#">Get Involved</a></li>
+                                    <li><a href="https://github.com/citruspi/RHokTheHood">Get Involved</a></li>
                                 
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="mailto:me@mihirsingh.com">Contact</a></li>
 
                             
                                 </ul>
@@ -81,6 +81,14 @@
 
         </div>
 
+        <div id="myModal" class="reveal-modal medium" data-reveal> 
+            <h2>RHoK The Hood</h2> 
+            <p class="lead">A civics hacking project by two students.</p> 
+            <p>RHoK The Hood began as a project at the 2013 Rochester Random Hacks of Kindness Hackathon. It was an attempt to provide the residents of Rochester City with an easy way to visualize information that we found was frequently requested through the Freedom of Information Law in a concise manner at a block level using the power of Geographic Information Systems.</p>
+            <p>Now, we want to do it on a bigger scale - we want to get as much data on as many places and make it accessible to as many people as possible. And we're going to need your help to do it. <a href="https://github.com/citruspi/RHokTheHood">Get involved.</a></p>
+            <a class="close-reveal-modal">&#215;</a> 
+        </div>
+
     </body>
 
     <script src="/static/js/jquery.js"></script>
@@ -89,6 +97,23 @@
     <script>
 
         $(document).foundation();
+
+    </script>
+
+    <script>
+
+        $(document).on('open', '[data-reveal]', function () {
+   
+            document.getElementById("leaflet-control-geosearch-qry").style.visibility = "hidden";
+
+        });
+
+        $(document).on('close', '[data-reveal]', function () {
+   
+            document.getElementById("leaflet-control-geosearch-qry").style.visibility = "visible";
+
+        });
+
 
     </script>
 
