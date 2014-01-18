@@ -5,6 +5,10 @@ html, body {
     font-family: 'Open Sans';
 }
 
+.off-canvas-wrap {
+    overflow: visible;
+}
+
 .off-canvas-wrap, .inner-wrap {
 
     height: 100%;
@@ -89,8 +93,7 @@ html, body {
     display: block;
     width: 100%;
     color: white;
-    padding: 12px 0 12px 0;
-    padding-left: 15px;
+    padding: 12px 0 12px 12px;
     font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 0.8125rem;
     font-weight: normal;
