@@ -11,6 +11,10 @@ html, body {
 
 }
 
+.title-area {
+    overflow: hidden;
+}
+
 #map-canvas {
 	height: 100%;
 	transition: width 0.6s linear;
@@ -23,8 +27,8 @@ html, body {
 .leaflet-control-geosearch {
 
     background: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -34,5 +38,35 @@ html, body {
     height: 2.25em;
     width: 100%;
     border: 1px solid black;
+}
+
+.left-off-canvas-toggle {
+    float: left;
+}
+
+.top-bar .name {
+    float: left;
+}
+
+.top-bar .flyout-icon {
+    margin-right: 5px;
+}
+
+.top-bar .filter-label {
+    display: none;
+}
+
+.top-bar .filter {
+    float: left;
+}
+
+@media only screen and (min-width: 40.063em) {
+
+    .top-bar .filter-label {
+        display: inline;
+    }
+    .top-bar .toggle-topbar.menu-icon {
+        margin-top: 5px;
+    }
 
 }
