@@ -48,6 +48,11 @@ html, body {
     float: left;
 }
 
+.top-bar .site-title {
+    padding: 0 15px;
+    color: #fff;
+}
+
 .top-bar .flyout-icon {
     margin-right: 5px;
 }
@@ -58,6 +63,38 @@ html, body {
 
 .top-bar .filter {
     float: left;
+}
+
+.top-bar .toggle-topbar.menu-icon {
+    float: right;
+    right: 0;
+}
+
+.top-bar .toggle-topbar.menu-icon > a {
+    width: auto;
+    padding: 0 15px;
+}
+
+.top-bar .toggle-topbar.menu-icon > a > span {
+    position: static;
+}
+
+.nav-bar-section li a:not(.button) {
+    padding: 0 15px;
+    line-height: 45px;
+    background: #333333;
+}
+
+.nav-bar-section ul li > a {
+    display: block;
+    width: 100%;
+    color: white;
+    padding: 12px 0 12px 0;
+    padding-left: 15px;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: normal;
+    background: #333333;
 }
 
 @media only screen and (min-width: 40.063em) {
