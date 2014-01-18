@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    
+
     <head>
 
 	    <meta charset="UTF-8">
@@ -16,7 +16,7 @@
         <meta name="signet:authors" content="Mihir Singh (@citruspi), Michael Nolan (@SxNolan)">
         <meta name="signet:links" content="http://github.com/citruspi/RHokTheHood">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    
+
     </head>
 
     <body>
@@ -25,44 +25,49 @@
 
             <div class="inner-wrap">
 
-                <nav class="top-bar" data-topbar data-options="is_hover: false"> 
+                <nav class="top-bar" data-topbar data-options="is_hover: false">
 
-                    <ul class="title-area"> 
-            
-                        <li class="name"><h1><a href="#">RHoK The Hood</a></h1></li> 
+                    <section class="nav-bar-section">
 
-                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> 
-                    </ul> 
+                        <ul class="title-area">
 
-                    <section class="top-bar-section"> 
+                            <li class="filter show-for-medium-up"><a href="#" class="left-off-canvas-toggle"><i class="fa fa-bars flyout-icon"></i><span class="filter-label">Filter:</span> Violent Crimes Rate</a></li>
 
-                        <ul class="right"> 
-            
-                            <li><a id="location"><i class="fa fa-map-marker"></i>&nbsp; Location: Monroe County, NY</a></li> 
-                        
-                            <li><a href="#" class="left-off-canvas-toggle"><i class="fa fa-bars"></i> &nbsp; Filter: Violent Crimes Rate</a></li>
+                            <li class="name"><h1 class="site-title">RHoK The Hood</h1></li>
+
+                            <li class="toggle-topbar menu-icon"><a href="#"><span> </span></a></li>
+                        </ul>
+                    </section>
+
+                    <section class="top-bar-section nav-bar-section">
+
+                        <ul class="right menu-items">
+
+                            <li class="filter show-for-small-only"><a href="#" class="left-off-canvas-toggle"><i class="fa fa-bars flyout-icon"></i><span class="filter-label">Filter:</span> Violent Crimes Rate</a></li>
+
+                            <li class="menu-item"><a id="location"><i class="fa fa-map-marker"></i>&nbsp; Location: Monroe County, NY</a></li>
 
                             <li class="has-dropdown">
                                 <a>More</a>
-                                
+
                                 <ul class="dropdown">
 
                                     <li><a href="#" data-reveal-id="myModal"><i class="fa fa-info-circle"></i> &nbsp;About</a></li>
-                                
+
                                     <li><a href="https://github.com/citruspi/RHokTheHood"><i class="fa fa-code-fork"></i>&nbsp; Get Involved</a></li>
-                                
+
                                     <li><a href="mailto:me@mihirsingh.com"><i class="fa fa-envelope-o"></i>&nbsp; Contact</a></li>
 
-                            
+
                                 </ul>
 
                             </li>
-                            
+
                         </ul>
-            
+
                     </section>
 
-                </nav> 
+                </nav>
 
                 <aside class="left-off-canvas-menu">
 
@@ -75,19 +80,19 @@
                 </aside>
 
                 <div id="map-canvas"></div>
-  
+
                 <a class="exit-off-canvas"></a>
 
             </div>
 
         </div>
 
-        <div id="myModal" class="reveal-modal medium" data-reveal> 
-            <h2>RHoK The Hood</h2> 
-            <p class="lead">A civics hacking project by two students.</p> 
+        <div id="myModal" class="reveal-modal medium" data-reveal>
+            <h2>RHoK The Hood</h2>
+            <p class="lead">A civics hacking project by two students.</p>
             <p>RHoK The Hood began as a project at the 2013 Rochester Random Hacks of Kindness Hackathon. It was an attempt to provide the residents of Rochester City with an easy way to visualize information that we found was frequently requested through the Freedom of Information Law in a concise manner at a block level using the power of Geographic Information Systems.</p>
             <p>Now, we want to do it on a bigger scale - we want to get as much data on as many places and make it accessible to as many people as possible. And we're going to need your help to do it. <a href="https://github.com/citruspi/RHokTheHood">Get involved.</a></p>
-            <a class="close-reveal-modal">&#215;</a> 
+            <a class="close-reveal-modal">&#215;</a>
         </div>
 
     </body>
@@ -104,13 +109,13 @@
     <script>
 
         $(document).on('open', '[data-reveal]', function () {
-   
+
             document.getElementById("leaflet-control-geosearch-qry").style.visibility = "hidden";
 
         });
 
         $(document).on('close', '[data-reveal]', function () {
-   
+
             document.getElementById("leaflet-control-geosearch-qry").style.visibility = "visible";
 
         });
