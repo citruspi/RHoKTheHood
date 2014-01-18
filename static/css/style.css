@@ -11,6 +11,10 @@ html, body {
 
 }
 
+.title-area {
+    overflow: hidden;
+}
+
 #map-canvas {
 	height: 100%;
 	transition: width 0.6s linear;
@@ -23,8 +27,8 @@ html, body {
 .leaflet-control-geosearch {
 
     background: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -34,5 +38,80 @@ html, body {
     height: 2.25em;
     width: 100%;
     border: 1px solid black;
+}
+
+.left-off-canvas-toggle {
+    float: left;
+}
+
+.top-bar .name {
+    float: left;
+}
+
+.top-bar .site-title {
+    padding: 0 15px;
+    color: #fff;
+}
+
+.top-bar .flyout-icon {
+    margin-right: 5px;
+}
+
+.top-bar .filter-label {
+    display: none;
+}
+
+.top-bar .filter {
+    float: left;
+}
+
+.top-bar .toggle-topbar.menu-icon {
+    float: right;
+    right: 0;
+}
+
+.top-bar .toggle-topbar.menu-icon > a {
+    width: auto;
+    padding: 0 15px;
+}
+
+.top-bar .toggle-topbar.menu-icon > a > span {
+    position: static;
+}
+
+.nav-bar-section li a:not(.button) {
+    padding: 0 15px;
+    line-height: 45px;
+    background: #333333;
+}
+
+.nav-bar-section ul li > a {
+    display: block;
+    width: 100%;
+    color: white;
+    padding: 12px 0 12px 0;
+    padding-left: 15px;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: normal;
+    background: #333333;
+}
+
+.menu-items .menu-item {
+    clear: both;
+}
+
+.menu-items .filter {
+    float: none;
+}
+
+@media only screen and (min-width: 40.063em) {
+
+    .top-bar .filter-label {
+        display: inline;
+    }
+    .top-bar .toggle-topbar.menu-icon {
+        margin-top: 5px;
+    }
 
 }
