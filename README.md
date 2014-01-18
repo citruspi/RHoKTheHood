@@ -22,6 +22,7 @@ Then navigate your preferred web browser to the application.
 - Sushanth Bhaskarabhatla ([@bhaskaraspb](https://github.com/bhaskaraspb))
 - Dan Ubilla ([@dubilla](https://github.com/dubilla))
 - Erin Westfall ([@ewestfall](https://github.com/ewestfall))
+- Bereket Abraham ([@babraham123](https://github.com/babraham123))
 
 ## Contributing
 
