@@ -155,5 +155,3 @@ function getRanking(label, val) {
     var sorted = stats[label].map(Number).sort();
     return sorted.indexOf(val) + 1;
 }
-
-document.getElementById('leaflet-control-geosearch-qry').focus();
