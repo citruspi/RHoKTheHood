@@ -145,7 +145,7 @@ function populateScale (label) {
 
         var html = 'Block Group ID: ' + stats['Block Group ID'][block.index] + '</br>'
             + 'Median Value: ' + stats[label][block.index] + '</br>'
-            + 'Rank: #' + rank;
+            + 'Rank: #' + rank + '/' + blocks.length;
 
         block.bindPopup(html);
     });
