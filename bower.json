@@ -1,0 +1,21 @@
+{
+  "name": "RHokTheHood",
+  "version": "0.0.0",
+  "homepage": "https://github.com/citruspi/RHokTheHood",
+  "authors": [
+    "(Mike Nolan <me@michael-nolan.com>)",
+    "(Mihir Singh <bower.service@mihirsingh.com>)"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+    "leaflet": "~0.7.3",
+    "foundation": "~5.4.3",
+    "pace": "~0.5.7",
+    "d3": "~3.4.11",
+    "L.GeoSearch": "*",
+    "Leaflet.label": "~0.2.1",
+    "jquery": "~2.1.1",
+    "font-awesome": "~4.2.0"
+  }
+}

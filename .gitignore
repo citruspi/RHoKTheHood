@@ -1,3 +1,2 @@
 .DS_Store
-*.sublime-project
-*.sublime-workspace
+static/bower_components/
