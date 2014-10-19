@@ -59,7 +59,7 @@ var filters = [
 ];
 
 $(document).ready(function () {
-    var main = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    var main = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors',
             minZoom: 5,
             maxZoom: 18,
