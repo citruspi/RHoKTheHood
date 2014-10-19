@@ -11,7 +11,6 @@
   "dependencies": {
     "leaflet": "~0.7.3",
     "foundation": "~5.4.3",
-    "pace": "~0.5.7",
     "d3": "~3.4.11",
     "L.GeoSearch": "*",
     "Leaflet.label": "~0.2.1",
