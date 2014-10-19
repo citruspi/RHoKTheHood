@@ -85,8 +85,8 @@ $(document).ready(function () {
         showMarker: false
     }).addTo(map);
 
-    $.getJSON('/static/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
-        csvToJson('/static/data/US/NY/055/US-NY-055-STATS.csv', function (stats) {
+    $.getJSON('/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
+        csvToJson('/data/US/NY/055/US-NY-055-STATS.csv', function (stats) {
             L.geoJson(features, { 
                 style: function (feature) {
                     var id = feature.properties['GEOID'];
