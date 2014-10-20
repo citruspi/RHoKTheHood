@@ -1,2 +1,2 @@
-.DS_Store
-static/bower_components/
+src/vendor
+node_modules
