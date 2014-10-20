@@ -1,4 +1,4 @@
-all:
+all: dependencies
 
 	gulp assets
 
