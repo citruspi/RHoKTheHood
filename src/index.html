@@ -6,14 +6,30 @@
         <meta charset="UTF-8">
         <title>RHok The Hood | Making your city that much better.</title>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/bower_components/foundation/css/foundation.css" />
-        <script src="/bower_components/modernizr/modernizr.js"></script>
-        <link rel="stylesheet" href="/bower_components/leaflet/dist/leaflet.css" />
-        <link rel="stylesheet" href="/bower_components/Leaflet.label/dist/leaflet.label.css" />
-        <link rel="stylesheet" href="/bower_components/L.GeoSearch/src/css/L.geosearch.css" />
+
+        <!-- build:css style.css -->
+        <link rel="stylesheet" href="/vendor/foundation/css/foundation.css" />
+        <link rel="stylesheet" href="/vendor/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="/vendor/Leaflet.label/dist/leaflet.label.css" />
+        <link rel="stylesheet" href="/vendor/L.GeoSearch/src/css/L.geosearch.css" />
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <link rel="stylesheet" href="/css/jquery.sidr.dark.css" />
-        <link href="/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="/vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <!-- endbuild -->
+
+        <!-- build:js script.js -->
+        <script type="text/javascript" src="/vendor/modernizr/modernizr.js"></script>
+        <script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/vendor/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/vendor/foundation/js/foundation/foundation.js"></script>
+        <script type="text/javascript" src="/vendor/leaflet/dist/leaflet.js"></script>
+        <script type="text/javascript" src="/vendor/Leaflet.label/dist/leaflet.label.js"></script>
+        <script type="text/javascript" src="/vendor/L.GeoSearch/src/js/L.control.geosearch.js"></script>
+        <script type="text/javascript" src="/vendor/L.GeoSearch/src/js/L.geosearch.provider.esri.js"></script>
+
+        <script type="text/javascript" src="/js/utilities.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+        <!-- endbuild -->
 
     </head>
 
@@ -93,16 +109,9 @@
             <a class="close-reveal-modal">&#215;</a>
         </div>
 
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/bower_components/foundation/js/foundation/foundation.js"></script>
-
         <script>
 
             $(document).foundation();
-
-        </script>
-
-        <script>
 
             $(document).on('open', '[data-reveal]', function () {
 
@@ -118,14 +127,6 @@
 
 
         </script>
-
-        <script type="text/javascript" src="/bower_components/d3/d3.min.js"></script>
-        <script type="text/javascript" src="/bower_components/leaflet/dist/leaflet.js"></script>
-        <script type="text/javascript" src="/bower_components/Leaflet.label/dist/leaflet.label.js"></script>
-        <script type="text/javascript" src="/bower_components/L.GeoSearch/src/js/L.control.geosearch.js"></script>
-        <script type="text/javascript" src="/bower_components/L.GeoSearch/src/js/L.geosearch.provider.esri.js"></script>
-        <script type="text/javascript" src="/js/utilities.js"></script>
-        <script type="text/javascript" src="/js/script.js"></script>
 
     </body>
 
