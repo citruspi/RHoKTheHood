@@ -21,3 +21,7 @@ release:
 	git reset --hard
 	npm install
 	bower install
+
+test:
+
+	gulp lint
