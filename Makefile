@@ -1,4 +1,4 @@
-all: dependencies
+all: clean dependencies
 
 	gulp assets
 
