@@ -28,7 +28,9 @@ $ make
 ## Contributing
 
 1. Fork
-2. Commit
-3. Push
-4. Open Pull Request
-5. Rejoice
+2. Fix
+3. `make test`
+4. Commit
+5. Push
+6. Open Pull Request
+7. Rejoice
