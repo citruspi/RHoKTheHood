@@ -5,15 +5,16 @@ Creating a system for displaying Rochester government GIS data.
 
 ## Setup
 
-In the project workspace, run
+You're expected to already have `npm`, `bower`, and `gulp` installed.
 
-    $ pip install -r requirements.txt
-
-followed by 
-
-    $ python app.py
-
-Then navigate your preferred web browser to the application.
+```
+$ git clone https://github.com/citruspi/RHokTheHood.git
+$ cd RHokTheHood
+$ bower install
+$ npm install
+$ make dependencies
+$ make
+```
 
 ## Contributors
 
