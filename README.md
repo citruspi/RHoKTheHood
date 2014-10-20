@@ -1,4 +1,4 @@
-## RHok The Hood
+## RHoK The Hood
 
 Creating a system for displaying Rochester government GIS data.
 
@@ -8,8 +8,8 @@ Creating a system for displaying Rochester government GIS data.
 You're expected to already have `npm`, `bower`, and `gulp` installed.
 
 ```
-$ git clone https://github.com/citruspi/RHokTheHood.git
-$ cd RHokTheHood
+$ git clone https://github.com/citruspi/RHoKTheHood.git
+$ cd RHoKTheHood
 $ bower install
 $ npm install
 $ make dependencies
