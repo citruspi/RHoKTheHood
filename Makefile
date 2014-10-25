@@ -4,9 +4,6 @@ all: clean dependencies
 
 release:
 
-	rm -rf dist
-	gulp lint
-	gulp assets
 	zip -r release dist
 
 dependencies:
