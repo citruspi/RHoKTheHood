@@ -4,7 +4,7 @@ all: clean dependencies
 
 release:
 
-	zip -r release dist
+	cd dist && zip -r ../release.zip .
 
 dependencies:
 
