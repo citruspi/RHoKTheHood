@@ -1,3 +1,4 @@
+$(document).foundation();
 var blocks = [],
     menu = false;
 
@@ -87,7 +88,7 @@ $(document).ready(function () {
 
     $.getJSON('/data/US/NY/055/US-NY-055-SHAPE.json', function (features) {
         csvToJson('/data/US/NY/055/US-NY-055-STATS.csv', function (stats) {
-            L.geoJson(features, { 
+            L.geoJson(features, {
                 style: function (feature) {
                     var id = feature.properties['GEOID'];
                            return {
@@ -140,7 +141,7 @@ function populateScale (label) {
         var val = parseFloat(stats[label][block.index]),
             o = scale(val);
         block.setStyle({fillOpacity: o});
-        
+
         var rank = getRanking(label, val);
 
         var html = 'Block Group ID: ' + stats['Block Group ID'][block.index] + '</br>'
