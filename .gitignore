@@ -1,4 +1,4 @@
 src/vendor
 node_modules
 dist
-release.zip
+release
