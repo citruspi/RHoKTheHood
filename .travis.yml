@@ -15,7 +15,7 @@ deploy:
   provider: s3
   access_key_id: AKIAIKAOQMWIKVZMP4BQ
   secret_access_key:
-    secure: bq6uMPVbDjQrepMrxTfJHHvMJr9fZVLkTjVnVf6w/JfxFzYof7o8POemTkfIfqHt+/E38YnPnP4YVUO8iEdP8yo1AfDGi4PtzEC4LUyP/p9gMFStnhy8Alp3t+xu1gF5SQOVSIuVT21RDyH18qE4gAEiVKAsnx62DEbeHPi2+Ec=
+    secure: bSFJIUo7mbk6e0YYS9SrppgZ+vL22nvpw8UHaP5CVa6mf1p0jjmzW2qOJGMX2+uI0zOL9ElzF8i88wDleD6TEw+bCw+H9YrSPkffVBbKOyyKX5ipmlOdbezQf/ot4ovgAJCxahoUy4JHUoquhsiiZoRL7QbnOdJ6XHl88wF2Lsw=
   bucket: com.rhokthehood.www
   skip_cleanup: true
   local-dir: release
