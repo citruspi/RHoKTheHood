@@ -9,7 +9,7 @@ before_script:
   - npm install
   - bower install
 
-script: return 0
+script: make test
 
 before_deploy: make release
 
