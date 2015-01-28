@@ -31,7 +31,7 @@ deps:
 	npm install
 	bower install
 
-test:
+test: dist
 
 	gulp lint
 
