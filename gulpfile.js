@@ -6,7 +6,8 @@ $ = require('gulp-load-plugins')();
 gulp.task('lint', function() {
     return gulp.src('src/js/*.js')
         .pipe($.jshint())
-        .pipe($.jshint.reporter('default'));
+        .pipe($.jshint.reporter('default'))
+        .pipe($.jshint.reporter('fail'));
 });
 
 gulp.task('assets', function(){
